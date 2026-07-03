@@ -4,7 +4,7 @@ import { IPost } from "../types/types";
 
 export async function postPost(title: string, body: string) {
   const date = new Date()
-  const currentDate = `${date.getFullYear()}-${String(date.getMonth() + 1)}-${date.getDay()}`
+  const currentDate = `${date.getFullYear()}-${String(date.getMonth() + 1)}-${date.getDate()}`
   const newPost: IPost = {
     id: "",
     title: title,

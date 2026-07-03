@@ -1,0 +1,3 @@
+export const REQUIRED_DATE_LENGTH = 10
+export const REQUIRED_PARTS_OF_DATE = 3
+export const REQUIRED_POST_TITLE_AND_BODY_LENGTH = 4

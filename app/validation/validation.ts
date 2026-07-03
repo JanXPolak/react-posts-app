@@ -1,4 +1,5 @@
 import { IPost } from "../types/types";
+import { REQUIRED_DATE_LENGTH, REQUIRED_PARTS_OF_DATE, REQUIRED_POST_TITLE_AND_BODY_LENGTH } from "./consts";
 
 export function postDataValidator(posts: any) {
     const newPosts: IPost[] = []
@@ -43,23 +44,29 @@ function isTitleOk(title: any) {
 }
 
 function isCreatedAtOk(createdAt: any) {
-    const REQUIRED_DATE_LENGTH = 10
-    if (typeof createdAt !== "string" && createdAt.length != REQUIRED_DATE_LENGTH && !createdAt.includes('-') && createdAt.split('-').length != 3) return false;
+    const isCreatedAtString = typeof createdAt === "string"
 
-    const year = createdAt.split('-')[0]
-    const month = createdAt.split('-')[1]
-    const day = createdAt.split('-')[2]
+    if (!isCreatedAtString) {
+        return false;
+    }
+
+    const hasCorrectDateLength = createdAt.length === REQUIRED_DATE_LENGTH
+    const hasDateSeparators = createdAt.includes("-");
+    const hasCorrectNumberOfDateParts = createdAt.split("-").length === REQUIRED_PARTS_OF_DATE;
+    if (!hasCorrectDateLength || !hasDateSeparators || !hasCorrectNumberOfDateParts) return false;
+
+    const dateParts = createdAt.split("-");
+    const [year, month, day] = dateParts;
 
     const isYearOk = !isNaN(Number(year)) && Number(year) >= 2020 && Number(year) <= 2026
     const isMonthOk = !isNaN(Number(month)) && Number(month) > 0 && Number(month) <= 12
     const isDayOk = !isNaN(Number(day)) && Number(day) > 0 && Number(day) <= 31
 
-    if (isYearOk && isMonthOk && isDayOk) return true
-    else return false
+    return isYearOk && isMonthOk && isDayOk;
 }
 
 export function isPostFormValid(title: string, body: string) {
-    const isTitleOk = title.trim() != "" && title.trim().length > 3;
-    const isBodyOk = body.trim() != "" && body.trim().length > 3;
+    const isTitleOk = title.trim() != "" && title.trim().length >= REQUIRED_POST_TITLE_AND_BODY_LENGTH;
+    const isBodyOk = body.trim() != "" && body.trim().length >= REQUIRED_POST_TITLE_AND_BODY_LENGTH;
     return isTitleOk && isBodyOk;
 }

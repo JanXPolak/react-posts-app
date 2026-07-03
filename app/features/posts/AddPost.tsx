@@ -1,6 +1,6 @@
-import { FC, useContext, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { isPostFormValid } from "../../validation/validation";
-import { ErrorContext } from "../../store/ErrorContext";
+import { REQUIRED_POST_TITLE_AND_BODY_LENGTH } from "@/app/validation/consts";
 
 interface Props {
   onAddHandler: (title: string, body: string) => void;
@@ -10,7 +10,6 @@ const AddPost: FC<Props> = ({ onAddHandler }) => {
   const [inputTitle, setInputTitle] = useState("");
   const [inputBody, setInputBody] = useState("");
   const [isError, setIsError] = useState(true);
-  const { isError: isAPIError } = useContext(ErrorContext)
 
   return (
     <div className="mb-4 w-full">
@@ -59,7 +58,7 @@ const AddPost: FC<Props> = ({ onAddHandler }) => {
       </form>
       {isError && (
         <p className="mt-2 text-sm font-medium text-red-500">
-          Tytuł i opis muszą mieć więcej niż 3 znaki.
+          Tytuł i opis muszą minimum {REQUIRED_POST_TITLE_AND_BODY_LENGTH} znaki.
         </p>
       )}
     </div>

@@ -26,7 +26,7 @@ const PostModal: FC<Props> = ({
   onClickConfirmDeletePost,
   onClickCancelDeletingPost,
 }) => {
-  const [showingEditPost, setIsShowingEditPost] = useState(false);
+  const [isShowingEditPost, setIsShowingEditPost] = useState(false);
 
   function onClickCancelEditPost() {
     setIsShowingEditPost(false);
@@ -73,7 +73,7 @@ const PostModal: FC<Props> = ({
               onClickCancelDeletingPost={onClickCancelDeletingPost}
             />
           )}
-          {showingEditPost && (
+          {isShowingEditPost && (
             <EditPost
               selectedPost={selectedPost}
               onClickCancelEditPost={onClickCancelEditPost}
