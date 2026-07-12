@@ -28,7 +28,7 @@ const EditPost: FC<Props> = ({ selectedPost, onClickCancelEditPost }) => {
           return;
         }
 
-        onEditHandler(selectedPost.id, inputTitle, inputBody);
+        onEditHandler(selectedPost.id, inputTitle.trim(), inputBody.trim());
         onClickCancelEditPost();
       }}
     >

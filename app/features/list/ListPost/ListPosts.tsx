@@ -57,7 +57,6 @@ const ListPosts: FC<Props> = ({
       </div>
       <PostModal
         selectedPost={selectedPost}
-        NO_POST_SELECTED={NO_POST_SELECTED}
         idPostToDelete={idPostToDelete}
         onClickEditPostButton={onClickEditPostButton}
         onClickCancelDeletingPost={onClickCancelDeletingPost}

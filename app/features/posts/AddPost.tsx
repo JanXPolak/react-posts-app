@@ -23,7 +23,7 @@ const AddPost: FC<Props> = ({ onAddHandler }) => {
             return;
           }
 
-          onAddHandler(inputTitle, inputBody);
+          onAddHandler(inputTitle.trim(), inputBody.trim());
           setInputTitle("");
           setInputBody("");
           setIsError(true);

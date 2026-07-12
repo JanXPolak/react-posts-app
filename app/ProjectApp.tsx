@@ -7,7 +7,6 @@ import ErrorToast from "./features/toast/ErrorToast";
 import { ErrorContext } from "./store/ErrorContext";
 import { Toaster } from "sonner";
 import { usePosts } from "./hooks/usePosts";
-
 const ProjectApp = () => {
   const {
     isAPIError,
