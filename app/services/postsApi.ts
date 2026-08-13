@@ -3,8 +3,7 @@ import { IPost } from "../types/types";
 
 
 export async function postPost(title: string, body: string) {
-  const date = new Date()
-  const currentDate = `${date.getFullYear()}-${String(date.getMonth() + 1)}-${date.getDay()}`
+  const currentDate = new Date().toISOString().split("T")[0];
   const newPost: IPost = {
     id: "",
     title: title,

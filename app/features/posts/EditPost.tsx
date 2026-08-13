@@ -2,6 +2,7 @@ import { FC, useContext, useState } from "react";
 import { IPost } from "../../types/types";
 import { PostsContext } from "../../store/PostsContext";
 import { isPostFormValid } from "../../validation/validation";
+import { REQUIRED_POST_TITLE_AND_BODY_LENGTH } from "@/app/validation/consts";
 
 interface Props {
   selectedPost: IPost;
@@ -13,9 +14,7 @@ const EditPost: FC<Props> = ({ selectedPost, onClickCancelEditPost }) => {
   const [inputBody, setInputBody] = useState(selectedPost.body);
 
   const isPostFormOk = isPostFormValid(selectedPost.title, selectedPost.body);
-
   const [isError, setIsError] = useState(!isPostFormOk);
-
   const { onEditHandler } = useContext(PostsContext);
 
   return (
@@ -29,7 +28,7 @@ const EditPost: FC<Props> = ({ selectedPost, onClickCancelEditPost }) => {
           return;
         }
 
-        onEditHandler(selectedPost.id, inputTitle, inputBody);
+        onEditHandler(selectedPost.id, inputTitle.trim(), inputBody.trim());
         onClickCancelEditPost();
       }}
     >
@@ -60,8 +59,8 @@ const EditPost: FC<Props> = ({ selectedPost, onClickCancelEditPost }) => {
       </div>
       {isError && (
         <p className="mb-3 text-sm font-medium text-red-500">
-          Nie możesz edytować posta. Tytuł i treść muszą mieć więcej niż 3
-          znaki.
+          Nie możesz edytować posta. Tytuł i treść muszą mieć minimum{" "}
+          {REQUIRED_POST_TITLE_AND_BODY_LENGTH} znaki.
         </p>
       )}
       <div className="flex gap-2">

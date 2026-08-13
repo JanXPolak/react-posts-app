@@ -4,10 +4,10 @@ import { IPost } from "../../types/types";
 import PostDetails from "./PostDetails";
 import EditPost from "../posts/EditPost";
 import DeletePostConfirm from "./DeletePostConfirm";
+import { NO_POST_SELECTED } from "../list/ListPost/consts";
 
 interface Props {
   selectedPost: IPost | undefined;
-  NO_POST_SELECTED: string;
   onClickCloseModal: () => void;
   onClickDeletePost: () => void;
   idPostToDelete: string;
@@ -18,7 +18,6 @@ interface Props {
 
 const PostModal: FC<Props> = ({
   selectedPost,
-  NO_POST_SELECTED,
   onClickCloseModal,
   onClickDeletePost,
   idPostToDelete,
@@ -26,7 +25,7 @@ const PostModal: FC<Props> = ({
   onClickConfirmDeletePost,
   onClickCancelDeletingPost,
 }) => {
-  const [showingEditPost, setIsShowingEditPost] = useState(false);
+  const [isShowingEditPost, setIsShowingEditPost] = useState(false);
 
   function onClickCancelEditPost() {
     setIsShowingEditPost(false);
@@ -73,7 +72,7 @@ const PostModal: FC<Props> = ({
               onClickCancelDeletingPost={onClickCancelDeletingPost}
             />
           )}
-          {showingEditPost && (
+          {isShowingEditPost && (
             <EditPost
               selectedPost={selectedPost}
               onClickCancelEditPost={onClickCancelEditPost}
