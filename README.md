@@ -4,6 +4,42 @@ A small web app for creating, browsing and managing posts. Form-driven UI with
 client-side validation and toast feedback, backed by a REST API (a `json-server`
 mock for local development).
 
+## Features
+
+- Create, edit and delete posts
+- Mark posts as favorites and filter to favorites only
+- Sort alphabetically, or by date (newest / oldest)
+- Client-side form validation with Zod
+- Incoming API data is validated too — malformed records are dropped from the
+  list and logged to the console instead of breaking the UI
+- Toast notifications for every action and for API errors
+- Dedicated loading and error screens
+- Fully typed with TypeScript
+
+## Tech stack
+
+- **Next.js 16** (App Router) + **React 19**
+- **TypeScript** – static typing across the codebase
+- **Tailwind CSS 4** – utility-first styling
+- **Zod** – form and API-response validation
+- **Sonner** – toast notifications
+- **json-server** – mock REST API for local development
+- **ESLint** – linting and consistency
+
+## Gained skills
+
+- Structuring a React app by feature, keeping view components separate from data
+  and state logic
+- Managing shared state with `useReducer` + Context instead of prop drilling
+- Writing custom hooks to isolate concerns — initial fetch (`useFetchPosts`),
+  mutations (`usePosts`), list and UI state (`useListPosts`)
+- Handling the full async lifecycle: loading, success and error states, plus a
+  cleanup guard against out-of-order responses
+- Runtime validation with Zod on both form input and untrusted API responses
+- Integrating a REST API (GET / POST / PATCH / DELETE) against a `json-server` mock
+- Styling with Tailwind CSS and giving feedback through toast notifications
+- Using TypeScript throughout — shared interfaces and typed reducer actions
+
 ## Demo
 
 ### Adding a post
@@ -43,28 +79,6 @@ A status message is shown while posts load; if the API is unreachable the app
 says so and recovers on the next refresh.
 
 ![Loading and error states](docs/01-loading-error.gif)
-
-## Features
-
-- Create, edit and delete posts
-- Mark posts as favorites and filter to favorites only
-- Sort alphabetically, or by date (newest / oldest)
-- Client-side form validation with Zod
-- Incoming API data is validated too — malformed records are dropped from the
-  list and logged to the console instead of breaking the UI
-- Toast notifications for every action and for API errors
-- Dedicated loading and error screens
-- Fully typed with TypeScript
-
-## Tech stack
-
-- **Next.js 16** (App Router) + **React 19**
-- **TypeScript** – static typing across the codebase
-- **Tailwind CSS 4** – utility-first styling
-- **Zod** – form and API-response validation
-- **Sonner** – toast notifications
-- **json-server** – mock REST API for local development
-- **ESLint** – linting and consistency
 
 ## Running locally
 
@@ -107,20 +121,6 @@ supports `GET /posts`, `POST /posts`, `PATCH /posts/:id` and
 npm run build
 npm run start
 ```
-
-## Gained skills
-
-- Structuring a React app by feature, keeping view components separate from data
-  and state logic
-- Managing shared state with `useReducer` + Context instead of prop drilling
-- Writing custom hooks to isolate concerns — initial fetch (`useFetchPosts`),
-  mutations (`usePosts`), list and UI state (`useListPosts`)
-- Handling the full async lifecycle: loading, success and error states, plus a
-  cleanup guard against out-of-order responses
-- Runtime validation with Zod on both form input and untrusted API responses
-- Integrating a REST API (GET / POST / PATCH / DELETE) against a `json-server` mock
-- Styling with Tailwind CSS and giving feedback through toast notifications
-- Using TypeScript throughout — shared interfaces and typed reducer actions
 
 ## Project structure
 
