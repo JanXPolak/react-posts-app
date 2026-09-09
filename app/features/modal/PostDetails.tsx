@@ -13,7 +13,7 @@ const PostDetails:FC<Props> = ({ selectedPost }) => {
       <p className="text-xs">({selectedPost.createdAt})</p>
       <p>{selectedPost.body}</p>
       <p className="font-bold">id: {selectedPost.id}</p>
-      <p className="font-bold">isFavorite: {selectedPost.isFavorite ? "tak" : "nie"}</p>
+      <p className="font-bold">isFavorite: {selectedPost.isFavorite ? "yes" : "no"}</p>
     </div>
   );
 };

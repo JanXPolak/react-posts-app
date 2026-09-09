@@ -32,9 +32,9 @@ const EditPost: FC<Props> = ({ selectedPost, onClickCancelEditPost }) => {
         onClickCancelEditPost();
       }}
     >
-      <h6 className="mb-3 text-sm font-semibold text-gray-700">Edytuj post</h6>
+      <h6 className="mb-3 text-sm font-semibold text-gray-700">Edit post</h6>
       <div className="mb-3">
-        <p className="mb-1 block text-xs font-medium text-gray-500">Tytuł</p>
+        <p className="mb-1 block text-xs font-medium text-gray-500">Title</p>
         <input
           className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 outline-none transition focus:border-gray-500 focus:ring-2 focus:ring-gray-200"
           value={inputTitle}
@@ -46,7 +46,7 @@ const EditPost: FC<Props> = ({ selectedPost, onClickCancelEditPost }) => {
         />
       </div>
       <div className="mb-4">
-        <p className="mb-1 block text-xs font-medium text-gray-500">Treść</p>
+        <p className="mb-1 block text-xs font-medium text-gray-500">Content</p>
         <textarea
           className="h-24 w-full resize-none rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 outline-none transition focus:border-gray-500 focus:ring-2 focus:ring-gray-200"
           value={inputBody}
@@ -59,8 +59,8 @@ const EditPost: FC<Props> = ({ selectedPost, onClickCancelEditPost }) => {
       </div>
       {isError && (
         <p className="mb-3 text-sm font-medium text-red-500">
-          Nie możesz edytować posta. Tytuł i treść muszą mieć minimum{" "}
-          {REQUIRED_POST_TITLE_AND_BODY_LENGTH} znaki.
+          You can&apos;t edit the post. Title and content must be at least{" "}
+          {REQUIRED_POST_TITLE_AND_BODY_LENGTH} characters.
         </p>
       )}
       <div className="flex gap-2">
@@ -69,14 +69,14 @@ const EditPost: FC<Props> = ({ selectedPost, onClickCancelEditPost }) => {
           disabled={isError}
           className="cursor-pointer rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:hover:bg-gray-300"
         >
-          Zapisz zmiany
+          Save changes
         </button>
         <button
           type="button"
           className="cursor-pointer rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
           onClick={() => onClickCancelEditPost()}
         >
-          Anuluj
+          Cancel
         </button>
       </div>
     </form>

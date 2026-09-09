@@ -8,7 +8,7 @@ const ErrorToast = () => {
   useEffect(() => {
     if (!isError) return;
 
-    toast.error("Wystąpił błąd podczas łączenia z API");
+    toast.error("An error occurred while connecting to the API");
 
     const timer = setTimeout(() => {
       setIsError(false);

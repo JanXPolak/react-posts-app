@@ -29,10 +29,10 @@ export const usePosts = () => {
           type: "add",
           payload: createdPost,
         });
-        toast.success("Pomyślnie dodano post");
+        toast.success("Post added successfully");
       } catch (error) {
-        console.error("Nie udało się dodać posta", error);
-        toast.error("Nie udało się dodać posta");
+        console.error("Failed to add the post", error);
+        toast.error("Failed to add the post");
         setIsAPIError(true);
       }
     }
@@ -45,10 +45,10 @@ export const usePosts = () => {
             id,
           },
         });
-        toast.success("Pomyślnie usunięto post");
+        toast.success("Post deleted successfully");
       } catch (error) {
-        console.error("Nie udało się usunąć posta", error);
-        toast.error("Nie udało się usunąć posta");
+        console.error("Failed to delete the post", error);
+        toast.error("Failed to delete the post");
         setIsAPIError(true);
       }
     }
@@ -64,10 +64,10 @@ export const usePosts = () => {
             body: updatedPost.body,
           },
         });
-        toast.success("Pomyślnie edytowano post");
+        toast.success("Post edited successfully");
       } catch (error) {
-        console.error("Nie udało się edytować posta", error);
-        toast.error("Nie udało się edytować posta");
+        console.error("Failed to edit the post", error);
+        toast.error("Failed to edit the post");
         setIsAPIError(true);
       }
     }
@@ -89,14 +89,14 @@ export const usePosts = () => {
   
         toast.success(
           post.isFavorite
-            ? "Usunięto post z ulubionych"
-            : "Dodano post do ulubionych"
+            ? "Post removed from favorites"
+            : "Post added to favorites"
         );
       } catch (error) {
-        console.error("Nie udało się zmienić stanu ulubionego posta", error);
+        console.error("Failed to change the post's favorite state", error);
         toast.error(post.isFavorite ?
-          "Nie udało się usunąć postu do ulubionych" :
-          "Nie udało się dodać postu do ulubionych"
+          "Failed to remove the post from favorites" :
+          "Failed to add the post to favorites"
         );
         setIsAPIError(true);
       }
