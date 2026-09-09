@@ -21,11 +21,15 @@ const ProjectApp = () => {
   } = usePosts();
 
   if (isPostsError) {
-    return <p>An error occurred while loading the data.</p>;
+    return (
+      <p className="p-8 text-center text-red-600">
+        Could not load posts. Try refreshing the page.
+      </p>
+    );
   }
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="p-8 text-center text-gray-500">Loading posts...</p>;
   }
 
   return (

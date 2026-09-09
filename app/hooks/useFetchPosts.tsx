@@ -18,7 +18,7 @@ const useFetchPosts = () => {
 
         return postDataValidator(result) as IPost[];
       } catch (error) {
-        console.log("Wystapil blad podczas fetchowania danych");
+        console.error("Failed to fetch posts:", error);
         setIsError(true);
         return [];
       } finally {
