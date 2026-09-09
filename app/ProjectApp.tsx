@@ -21,11 +21,11 @@ const ProjectApp = () => {
   } = usePosts();
 
   if (isPostsError) {
-    return <p>Wystapił błąd podczas wczytywania danych.</p>;
+    return <p>An error occurred while loading the data.</p>;
   }
 
   if (isLoading) {
-    return <p>Ładowanie...</p>;
+    return <p>Loading...</p>;
   }
 
   return (

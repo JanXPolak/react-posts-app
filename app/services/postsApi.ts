@@ -19,7 +19,7 @@ export async function postPost(title: string, body: string) {
     body: JSON.stringify(newPost),
   });
   if (!response.ok) {
-    throw new Error("Nie udało się dodać posta");
+    throw new Error("Failed to add the post");
   }
   return await response.json();
 }
@@ -29,7 +29,7 @@ export async function deletePost(id: string) {
     method: "DELETE"
   });
   if (!response.ok) {
-    throw new Error("Nie udało się usunąć posta");
+    throw new Error("Failed to delete the post");
   }
 }
 
@@ -45,7 +45,7 @@ export async function patchPost(id: string, title: string, body: string) {
     }),
   });
   if (!response.ok) {
-    throw new Error("Nie udało się edytować posta");
+    throw new Error("Failed to edit the post");
   }
   return await response.json();
 }
@@ -61,7 +61,7 @@ export async function patchFavorite(id: string, isFavorite: boolean) {
     }),
   });
   if (!response.ok) {
-    throw new Error("Nie udało się zmienić stanu ulubionego posta");
+    throw new Error("Failed to change the post's favorite state");
   }
   return await response.json();
 }
