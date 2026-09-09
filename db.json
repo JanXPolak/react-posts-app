@@ -1,0 +1,94 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Morning walk around the city",
+      "body": "The morning was calm and cool, so I went out before work. A short walk along the empty streets helped me clear my head and settle into the day.",
+      "createdAt": "2026-01-12",
+      "isFavorite": false
+    },
+    {
+      "id": "2",
+      "title": "The best coffee in the neighbourhood",
+      "body": "Found a tiny cafe two streets from the office. The espresso was excellent and the room was quiet enough to actually read for half an hour. I will be back.",
+      "createdAt": "2026-01-28",
+      "isFavorite": true
+    },
+    {
+      "id": "3",
+      "title": "Weekend trip to the lake",
+      "body": "We drove out to the lake on Saturday. Still water, cold air and almost no phone signal turned out to be exactly the kind of reset I needed.",
+      "createdAt": "2026-02-15",
+      "isFavorite": false
+    },
+    {
+      "id": "4",
+      "title": "Repotting the plants",
+      "body": "Spent Sunday afternoon repotting everything on the windowsill. The monstera had completely outgrown its pot, so hopefully it forgives me by spring.",
+      "createdAt": "2026-03-03",
+      "isFavorite": false
+    },
+    {
+      "id": "5",
+      "title": "Homemade thin-crust pizza",
+      "body": "Tomatoes, mozzarella, olives and a handful of arugula added after baking. The dough came out crisp for once, so I am writing the recipe down before I forget it.",
+      "createdAt": "2026-03-22",
+      "isFavorite": true
+    },
+    {
+      "id": "6",
+      "title": "First run in months",
+      "body": "Three slow kilometres around the park. Nothing impressive, but it felt good to start again. My legs will almost certainly complain tomorrow.",
+      "createdAt": "2026-04-06",
+      "isFavorite": false
+    },
+    {
+      "id": "7",
+      "title": "An evening with a good book",
+      "body": "Long day, so I made a pot of tea and read a few chapters instead of opening the laptop. Fell asleep earlier than usual and did not mind at all.",
+      "createdAt": "2026-04-19",
+      "isFavorite": true
+    },
+    {
+      "id": "8",
+      "title": "Trying to fix the squeaky door",
+      "body": "Watched a five-minute video, bought the wrong kind of oil, and tried anyway. The hinge is quieter now, but it also looks slightly worse than before.",
+      "createdAt": "2026-05-02",
+      "isFavorite": false
+    },
+    {
+      "id": "9",
+      "title": "Farmers market haul",
+      "body": "Strawberries, a loaf of sourdough, a jar of honey and far too much basil. The plan is pesto. The reality is probably just eating bread with honey.",
+      "createdAt": "2026-05-24",
+      "isFavorite": false
+    },
+    {
+      "id": "10",
+      "title": "Plans for a quiet Sunday",
+      "body": "No alarm, a bit of tidying, a proper lunch and a walk before it gets dark. Simple, but it is exactly what the rest of the week was missing.",
+      "createdAt": "2026-06-08",
+      "isFavorite": false
+    },
+    {
+      "id": "11",
+      "title": "Rain all weekend",
+      "body": "It did not stop once. I caught up on a series, baked banana bread and watched the street slowly turn into a small river. Not every weekend needs a plan.",
+      "createdAt": "2026-06-21",
+      "isFavorite": false
+    },
+    {
+      "id": "invalid-missing-title",
+      "body": "Intentionally broken record: it has no title, so postDataValidator rejects it and it never reaches the list.",
+      "createdAt": "2026-07-02",
+      "isFavorite": false
+    },
+    {
+      "id": "invalid-bad-date",
+      "title": "Record with a malformed date",
+      "body": "Intentionally broken record: createdAt is 2026-7-2 instead of 2026-07-02, which fails the ISO date check.",
+      "createdAt": "2026-7-2",
+      "isFavorite": false
+    }
+  ]
+}
