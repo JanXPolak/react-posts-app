@@ -43,7 +43,7 @@ const PostModal: FC<Props> = ({
             onClick={() => onClickCloseModal()}
             className="cursor-pointer mb-6 rounded-lg bg-gray-100 px-3 py-1 text-sm text-gray-600 hover:bg-gray-200"
           >
-            Zamknij
+            Close
           </button>
           <PostDetails selectedPost={selectedPost} />
           <div className="mt-8 flex gap-2">
@@ -54,7 +54,7 @@ const PostModal: FC<Props> = ({
                 onClickEditPostButton();
               }}
             >
-              Edytuj post
+              Edit post
             </button>
             <button
               className="cursor-pointer flex-1 rounded-lg bg-red-900 px-4 py-2 text-sm font-medium text-white hover:bg-red-600"
@@ -63,7 +63,7 @@ const PostModal: FC<Props> = ({
                 setIsShowingEditPost(false);
               }}
             >
-              Usuń post
+              Delete post
             </button>
           </div>
           {idPostToDelete !== NO_POST_SELECTED && (

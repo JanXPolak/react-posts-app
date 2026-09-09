@@ -33,7 +33,7 @@ const ListPosts: FC<Props> = ({
   } = useListPosts({ posts, onDeleteHandler });
 
   if (posts.length === 0) {
-    return <p>Brak danych.</p>;
+    return <p>No data.</p>;
   }
 
   return (
